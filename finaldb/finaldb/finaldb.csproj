@@ -1,0 +1,499 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B1EBFFC3-6E57-4762-9CF0-430B7178728A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>finaldb</RootNamespace>
+    <AssemblyName>finaldb</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.21.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.21.14.0\lib\net462\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess.EntityFramework, Version=6.122.21.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.EntityFramework.21.9.0\lib\net462\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.1.0\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Formats.Asn1, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Formats.Asn1.8.0.0\lib\net462\System.Formats.Asn1.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.6.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=6.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.6.0.1\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TextmagicRest, Version=1.0.0.5, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\TextmagicRest.1.0.0.5\lib\net45\TextmagicRest.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddSchedule.Designer.cs">
+      <DependentUpon>AddSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="assigntask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="assigntask.Designer.cs">
+      <DependentUpon>assigntask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="deleteSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="deleteSchedule.Designer.cs">
+      <DependentUpon>deleteSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="generateRevenue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="generateRevenue.Designer.cs">
+      <DependentUpon>generateRevenue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\addemployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\addemployee.Designer.cs">
+      <DependentUpon>addemployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\bookTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\bookTicket.Designer.cs">
+      <DependentUpon>bookTicket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\checkseat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\checkseat.Designer.cs">
+      <DependentUpon>checkseat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\customerService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\customerService.Designer.cs">
+      <DependentUpon>customerService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\customerSupportInterface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\customerSupportInterface.Designer.cs">
+      <DependentUpon>customerSupportInterface.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\cashierInterface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\cashierInterface.Designer.cs">
+      <DependentUpon>cashierInterface.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\deleteemployees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\deleteemployees.Designer.cs">
+      <DependentUpon>deleteemployees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\driverInterface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\driverInterface.Designer.cs">
+      <DependentUpon>driverInterface.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\addPassenger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\addPassenger.Designer.cs">
+      <DependentUpon>addPassenger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\manageTickets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\manageTickets.Designer.cs">
+      <DependentUpon>manageTickets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\passengerPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\passengerPage.Designer.cs">
+      <DependentUpon>passengerPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\giveFeedback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\giveFeedback.Designer.cs">
+      <DependentUpon>giveFeedback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\reportComplaint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\reportComplaint.Designer.cs">
+      <DependentUpon>reportComplaint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\requestAssistance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\requestAssistance.Designer.cs">
+      <DependentUpon>requestAssistance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\trackTrain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\trackTrain.Designer.cs">
+      <DependentUpon>trackTrain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\trainSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\trainSchedule.Designer.cs">
+      <DependentUpon>trainSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\updateEmployeeProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\updateEmployeeProfile.Designer.cs">
+      <DependentUpon>updateEmployeeProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\updatePassenger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\updatePassenger.Designer.cs">
+      <DependentUpon>updatePassenger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\viewPassenger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\viewPassenger.Designer.cs">
+      <DependentUpon>viewPassenger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\viewReservations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\viewReservations.Designer.cs">
+      <DependentUpon>viewReservations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\viewSalary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\viewSalary.Designer.cs">
+      <DependentUpon>viewSalary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\viewTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\viewTask.Designer.cs">
+      <DependentUpon>viewTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="signup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="signup.Designer.cs">
+      <DependentUpon>signup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="updateEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="updateEmployee.Designer.cs">
+      <DependentUpon>updateEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="updateSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="updateSchedule.Designer.cs">
+      <DependentUpon>updateSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewAdmin.Designer.cs">
+      <DependentUpon>ViewAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewEmployee.Designer.cs">
+      <DependentUpon>viewEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewFeedback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewFeedback.Designer.cs">
+      <DependentUpon>viewFeedback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewSchedule.Designer.cs">
+      <DependentUpon>viewSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewTrains.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewTrains.Designer.cs">
+      <DependentUpon>ViewTrains.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddSchedule.resx">
+      <DependentUpon>AddSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="assigntask.resx">
+      <DependentUpon>assigntask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="deleteSchedule.resx">
+      <DependentUpon>deleteSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="generateRevenue.resx">
+      <DependentUpon>generateRevenue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Resources\addemployee.resx">
+      <DependentUpon>addemployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\bookTicket.resx">
+      <DependentUpon>bookTicket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\checkseat.resx">
+      <DependentUpon>checkseat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\customerService.resx">
+      <DependentUpon>customerService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\customerSupportInterface.resx">
+      <DependentUpon>customerSupportInterface.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\cashierInterface.resx">
+      <DependentUpon>cashierInterface.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\deleteemployees.resx">
+      <DependentUpon>deleteemployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\driverInterface.resx">
+      <DependentUpon>driverInterface.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\addPassenger.resx">
+      <DependentUpon>addPassenger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\manageTickets.resx">
+      <DependentUpon>manageTickets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\passengerPage.resx">
+      <DependentUpon>passengerPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\giveFeedback.resx">
+      <DependentUpon>giveFeedback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\reportComplaint.resx">
+      <DependentUpon>reportComplaint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\requestAssistance.resx">
+      <DependentUpon>requestAssistance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\trackTrain.resx">
+      <DependentUpon>trackTrain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\trainSchedule.resx">
+      <DependentUpon>trainSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\updateEmployeeProfile.resx">
+      <DependentUpon>updateEmployeeProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\updatePassenger.resx">
+      <DependentUpon>updatePassenger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\viewPassenger.resx">
+      <DependentUpon>viewPassenger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\viewReservations.resx">
+      <DependentUpon>viewReservations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\viewSalary.resx">
+      <DependentUpon>viewSalary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\viewTask.resx">
+      <DependentUpon>viewTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="signup.resx">
+      <DependentUpon>signup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="updateEmployee.resx">
+      <DependentUpon>updateEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="updateSchedule.resx">
+      <DependentUpon>updateSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewAdmin.resx">
+      <DependentUpon>ViewAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewEmployee.resx">
+      <DependentUpon>viewEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewFeedback.resx">
+      <DependentUpon>viewFeedback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewSchedule.resx">
+      <DependentUpon>viewSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewTrains.resx">
+      <DependentUpon>ViewTrains.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Oracle.ManagedDataAccess.Client.Configuration.Section.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\expand-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\down %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-expand-arrow-20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-collapse-arrow-20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\System.Text.Json.6.0.1\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.1\build\System.Text.Json.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Text.Json.6.0.1\build\System.Text.Json.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Text.Json.6.0.1\build\System.Text.Json.targets'))" />
+  </Target>
+</Project>
